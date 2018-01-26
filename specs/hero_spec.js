@@ -12,16 +12,20 @@ describe('hero', function(){
     hero3 = new Hero('Floki', 200, 'Pizza');
   })
 
-  it('can get hero name', function(){
+  xit('can get hero name', function(){
     assert.strictEqual(hero1.name, 'Ragnar');
   })
 
-  it('can get hero health', function(){
+  xit('can get hero health', function(){
     assert.strictEqual(hero1.health, 100);
   })
 
-  it('can get hero favorite food', function(){
+  xit('can get hero favorite food', function(){
     assert.strictEqual(hero1.favouriteFood, 'Thai Food');
+  })
+
+  it('hero can talk', function(){
+    assert.strictEqual(hero1.talk(), 'My name is Ragnar and my food of chioce is Thai Food');
   })
 
 })
