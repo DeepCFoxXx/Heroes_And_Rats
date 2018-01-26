@@ -22,7 +22,16 @@ describe('task', function(){
   })
 
   xit('does task have task reward', function(){
-    assert.strictEqual(task1.taskReward, 'Green Ruppe');
+    assert.strictEqual(task1.reward, 'Green Ruppe');
+  })
+
+  xit('task starts off false', function(){
+    assert.strictEqual(task1.task, false);
+  })
+
+  it('task can be completed', function(){
+    task1.completed(task1);
+    assert.strictEqual(task1.task, true);
   })
 
 })
