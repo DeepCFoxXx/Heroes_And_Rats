@@ -1,7 +1,9 @@
+const Hero = require('./hero.js');
+
 var Task = function (difficultyLevel, urgencyLevel, reward){
   this.difficultyLevel = difficultyLevel;
   this.urgencyLevel = urgencyLevel;
-  this.Reward = reward;
+  this.reward = reward;
   this.task = false;
 }
 
