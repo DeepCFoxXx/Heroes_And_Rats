@@ -29,7 +29,7 @@ describe('task', function(){
     assert.strictEqual(task1.task, false);
   })
 
-  xit('task can be completed', function(){
+  it('task can be completed', function(){
     task1.completed(task1);
     assert.strictEqual(task1.task, true);
   })
