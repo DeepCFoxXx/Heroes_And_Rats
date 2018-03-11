@@ -14,11 +14,11 @@ describe('food', function(){
     food3 = new Food('Monster Cake', 5);
   })
 
-xit('food has a name', function(){
+it('food has a name', function(){
   assert.strictEqual(food1.name, 'Apple');
 })
 
-xit('food has a replenish value', function(){
+it('food has a replenish value', function(){
   assert.strictEqual(food1.replenishValue, 1);
 })
 

@@ -21,7 +21,7 @@ Hero.prototype.getHealth = function (){
 }
 
 Hero.prototype.eatFood = function (food){
-  this.health += food;
+  this.health += food.replenishValue;
 }
 
 Hero.prototype.eatFavFood = function (favFood){
@@ -31,40 +31,5 @@ Hero.prototype.eatFavFood = function (favFood){
 Hero.prototype.sort = function (){
   this.tasks.sort(task);
 }
-
-Hero.prototype.sortTasksByDifficulty = function(difficultyLevel){
-// some how take in difficulty level then sort the array of tasks
-var task;
-// sort the array of tasks by difficulty
-this.tasks.forEach(function(task) {
-  task.sort(task);
-});
-// return sorted array ?
-return this.tasks;
-}
-
-Hero.prototype.viewTasks = function(){
-// empty array to put completed tasks
-  var completedTasks = []
-// for each task in the array tasks that equals true
-// put them in completed task array
-  this.tasks.forEach(function(task){
-    completedTasks.push(task === true);
-  });
-  return completedTasks;
-}
-
-Hero.prototype.sortTasksByDifficulty = function(arr, difficultyLevel){
-
-var results = [];
-
-arr.forEach(function(task, difficultyLevel) {
-// if the task has a difficultyLevel sort into highest to lowest
-  if (task.difficultyLevel)
-});
-// return sorted array ?
-return this.tasks;
-}
-
 
 module.exports = Hero;

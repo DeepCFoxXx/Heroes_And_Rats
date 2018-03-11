@@ -13,19 +13,19 @@ describe('task', function(){
     task3 = new Task(15, 3, 'Heart Container');
   })
 
-  xit('does task have difficulty level', function(){
+  it('does task have difficulty level', function(){
     assert.strictEqual(task1.difficultyLevel, 5);
   })
 
-  xit('does task have a urgency level', function(){
+  it('does task have a urgency level', function(){
     assert.strictEqual(task1.urgencyLevel, 1);
   })
 
-  xit('does task have task reward', function(){
+  it('does task have task reward', function(){
     assert.strictEqual(task1.reward, 'Green Ruppe');
   })
 
-  xit('task starts off false', function(){
+  it('task starts off false', function(){
     assert.strictEqual(task1.task, false);
   })
 

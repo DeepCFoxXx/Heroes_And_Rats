@@ -24,88 +24,55 @@ describe('hero', function(){
     food2 = new Food('Gourmet Meat Curry', 10)
   })
 
-  xit('can get hero name', function(){
+  it('can get hero name', function(){
     assert.strictEqual(hero1.name, 'Link');
   })
 
-  xit('can get hero health', function(){
+  it('can get hero health', function(){
     assert.strictEqual(hero1.health, 28);
   })
 
-  xit('can get hero favorite food', function(){
+  it('can get hero favorite food', function(){
     assert.strictEqual(hero1.favouriteFood, 'Gourmet Meat Curry');
   })
 
-  xit('hero can talk', function(){
-    assert.strictEqual(hero1.talk(), 'My name is Ragnar and my food of chioce is Thai Food');
+  it('hero can talk', function(){
+    assert.strictEqual(hero1.talk(), 'My name is Link and my food of chioce is Gourmet Meat Curry');
   })
 
-  xit('does task have difficulty level', function(){
+  it('does task have difficulty level', function(){
     assert.strictEqual(task1.difficultyLevel, 5);
   })
 
-  xit('does task have a urgency level', function(){
+  it('does task have a urgency level', function(){
     assert.strictEqual(task1.urgencyLevel, 1);
   })
 
-  xit('does task have task reward', function(){
+  it('does task have task reward', function(){
     assert.strictEqual(task1.reward, 'Green Ruppe');
   })
 
-  xit('tasks starts off empty', function(){
+  it('tasks starts off empty', function(){
     assert.strictEqual(hero1.tasks.length, 0)
   })
 
-  xit('can add to tasks', function(){
+  it('can add to tasks', function(){
     hero1.addTasks(task1);
     assert.strictEqual(hero1.tasks.length, 1)
   })
 
-  xit('food has a name', function(){
+  it('food has a name', function(){
     assert.strictEqual(food1.name, 'Apple');
   })
 
-  xit('food has a replenish value', function(){
+  it('food has a replenish value', function(){
     assert.strictEqual(food1.replenishValue, 1);
   })
 
-  xit('food can heal hero', function(){
+  it('food can heal hero', function(){
     food1 = new Food('Apple', 1);
     hero1.eatFood(food1);
     assert.strictEqual(hero1.health, 29);
-  })
-
-  xit('favorite food should heal hero by 1.5 * health', function(){
-    favFood = new Food('Gourmet Meat Curry', 14);
-    hero1.eatFavFood(favFood);
-    assert.strictEqual(hero1.health, 42);
-  })
-
-  // xit('can sort tasks by difficulty', function(){
-  //   hero1.addTasks(task1);
-  //   hero1.addTasks(task2);
-  //   hero1.addTasks(task3);
-  //   assert.strictEqual(hero1.tasks.length, 3)
-  //   hero1.sortTasksByDifficulty();
-  //   // the returned sorted array of tasks will be task3 task2 task1
-  // })
-
-  xit('can view completed tasks', function(){
-    hero1.addTasks(task1);
-    assert.strictEqual(task1.task, false);
-    task1.completed(task1);
-    assert.strictEqual(task1.task, true);
-    hero1.viewTasks(task);
-    // the returned array will have one completed task in it
-  })
-
-  xit('can sort tasks by difficulty', function(){
-    hero1.addTasks(task1);
-    hero1.addTasks(task2);
-    hero1.addTasks(task3);
-    assert.strictEqual(hero1.tasks.length, 3)
-    var arr = [task1, task2, task3];
-    assert.strictEqual(hero1.sortTasksByDifficulty(arr), [task3, task2, task1]);
   })
 
 })
