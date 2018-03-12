@@ -29,6 +29,10 @@ Task.prototype.setReward = function() {
   if (this.reward == "Heart Container") return 3;
 }
 
+Task.prototype.compareDifficultyLevel = function(task) {
+  return this.setDifficulty() - task.setDifficulty();
+}
+
 
 
 module.exports = Task;

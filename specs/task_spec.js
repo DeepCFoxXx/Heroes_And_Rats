@@ -40,4 +40,10 @@ describe('task', function(){
     assert.strictEqual(task3.setReward(), 3);
   })
 
+  it('can compare difficulty level', function(){
+    assert.strictEqual(task1.compareDifficultyLevel(task2), -1);
+    assert.strictEqual(task1.compareDifficultyLevel(task3), -2);
+    assert.strictEqual(task1.compareDifficultyLevel(task1), 0);
+  })
+
 })
