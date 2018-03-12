@@ -41,4 +41,17 @@ Task.prototype.compareReward = function(task) {
   return this.setReward() - task.setReward();
 }
 
+Task.prototype.compareTasks = function(task, field) {
+  switch(field) {
+    case "Difficulty":
+    return this.compareDifficultyLevel(task);
+
+    case "Urgency":
+    return this.compareUrgencyLevel(task);
+
+    case "Reward":
+    return this.compareReward(task);
+  }
+}
+
 module.exports = Task;
