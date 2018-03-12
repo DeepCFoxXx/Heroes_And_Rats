@@ -37,6 +37,8 @@ Task.prototype.compareUrgencyLevel = function(task) {
   return this.setUrgencyLevel() - task.setUrgencyLevel();
 }
 
-
+Task.prototype.compareReward = function(task) {
+  return this.setReward() - task.setReward();
+}
 
 module.exports = Task;
