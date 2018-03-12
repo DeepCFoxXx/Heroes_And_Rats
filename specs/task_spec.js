@@ -8,13 +8,9 @@ describe('task', function(){
   let task3
 
   beforeEach(function(){
-    task1 = new Task("Easy", 1, 'Green Ruppe');
-    task2 = new Task("Medium", 2, 'Purple Rupee');
-    task3 = new Task("Hard", 3, 'Heart Container');
-  })
-
-  it('does task have a urgency level', function(){
-    assert.strictEqual(task1.urgencyLevel, 1);
+    task1 = new Task("Easy", "Low", 'Green Ruppe');
+    task2 = new Task("Medium", "Urgent", 'Purple Rupee');
+    task3 = new Task("Hard", "Very Urgent", 'Heart Container');
   })
 
   it('does task have task reward', function(){
@@ -34,6 +30,12 @@ describe('task', function(){
     assert.strictEqual(task1.setDifficulty(), 1);
     assert.strictEqual(task2.setDifficulty(), 2);
     assert.strictEqual(task3.setDifficulty(), 3);
+  })
+
+  it('tasks have set urgency level', function(){
+    assert.strictEqual(task1.setUrgencyLevel(), 1);
+    assert.strictEqual(task2.setUrgencyLevel(), 2);
+    assert.strictEqual(task3.setUrgencyLevel(), 3);
   })
 
 })
