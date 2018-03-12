@@ -23,4 +23,12 @@ Task.prototype.setUrgencyLevel = function() {
   if (this.urgencyLevel == "Very Urgent") return 3;
 }
 
+Task.prototype.setReward = function() {
+  if (this.reward == "Green Ruppe") return 1;
+  if (this.reward == "Purple Rupee") return 2;
+  if (this.reward == "Heart Container") return 3;
+}
+
+
+
 module.exports = Task;
