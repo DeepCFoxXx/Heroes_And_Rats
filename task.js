@@ -8,7 +8,13 @@ var Task = function (difficultyLevel, urgencyLevel, reward){
 }
 
 Task.prototype.completed = function(){
-  this.task = true;
+  this.completed = true;
+}
+
+Task.prototype.setDifficulty = function() {
+  if (this.difficultyLevel == "Easy") return 1;
+  if (this.difficultyLevel == "Medium") return 2;
+  if (this.difficultyLevel == "Hard") return 3;
 }
 
 module.exports = Task;
