@@ -33,6 +33,10 @@ Task.prototype.compareDifficultyLevel = function(task) {
   return this.setDifficulty() - task.setDifficulty();
 }
 
+Task.prototype.compareUrgencyLevel = function(task) {
+  return this.setUrgencyLevel() - task.setUrgencyLevel();
+}
+
 
 
 module.exports = Task;

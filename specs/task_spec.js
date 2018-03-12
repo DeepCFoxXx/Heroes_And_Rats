@@ -41,9 +41,15 @@ describe('task', function(){
   })
 
   it('can compare difficulty level', function(){
+    assert.strictEqual(task1.compareDifficultyLevel(task1), 0);
     assert.strictEqual(task1.compareDifficultyLevel(task2), -1);
     assert.strictEqual(task1.compareDifficultyLevel(task3), -2);
-    assert.strictEqual(task1.compareDifficultyLevel(task1), 0);
+  })
+
+  it('can compare urgencyLevel', function(){
+    assert.strictEqual(task1.compareUrgencyLevel(task1), 0);
+    assert.strictEqual(task1.compareUrgencyLevel(task2), -1);
+    assert.strictEqual(task1.compareUrgencyLevel(task3), -2);
   })
 
 })
