@@ -14,12 +14,17 @@ describe('food', function(){
     food3 = new Food('Monster Cake', 5);
   })
 
-it('food has a name', function(){
-  assert.strictEqual(food1.name, 'Apple');
-})
+  it('food has a name', function(){
+    assert.strictEqual(food1.name, 'Apple');
+  })
 
-it('food has a replenish value', function(){
-  assert.strictEqual(food1.replenishValue, 1);
-})
+  it('food has a replenish value', function(){
+    assert.strictEqual(food1.replenishValue, 1);
+  })
+
+  it('food can get poisoned', function(){
+    food1.poison();
+    assert.strictEqual(food1.poisoned, true);
+  })
 
 })
