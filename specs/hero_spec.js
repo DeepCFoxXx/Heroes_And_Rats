@@ -47,6 +47,11 @@ describe('hero', function(){
     assert.strictEqual(hero1.getHealth(), 29);
   })
 
+  it('can eat favourite food', function(){
+    hero1.eatSafeFood(food2);
+    assert.strictEqual(hero1.getHealth(), 43);
+  })
+
   it('hero can talk', function(){
     assert.strictEqual(hero1.talk(), 'My name is Link and my food of chioce is Gourmet Meat Curry');
   })
