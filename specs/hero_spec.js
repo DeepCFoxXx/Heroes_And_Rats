@@ -36,6 +36,10 @@ describe('hero', function(){
     assert.strictEqual(hero1.isFavouriteFood(food2), true);
   })
 
+  it('can check for favorite food', function(){
+    assert.strictEqual(hero1.isFavouriteFood(food1), false);
+  })
+
   it('hero can talk', function(){
     assert.strictEqual(hero1.talk(), 'My name is Link and my food of chioce is Gourmet Meat Curry');
   })
