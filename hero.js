@@ -1,5 +1,6 @@
 const Task = require('./task.js');
 const Food = require('./food.js');
+const Rat = require('./rat.js');
 
 var Hero = function (name, health, favouriteFood) {
   this.name = name;
@@ -14,6 +15,14 @@ Hero.prototype.talk = function (){
 
 Hero.prototype.isFavouriteFood = function(food){
   return food.name === this.favouriteFood;
+}
+
+Hero.prototype.eatSafeFood = function(food){
+  if (this.isFavouriteFood(food)){
+    this.health += food.replenishValue * 1.5;
+  } else {
+    this.health += food.replenishValue;
+  }
 }
 
 Hero.prototype.addTasks = function (task){
