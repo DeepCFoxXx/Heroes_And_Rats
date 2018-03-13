@@ -12,6 +12,10 @@ Hero.prototype.talk = function (){
   return (`My name is ${this.name} and my food of chioce is ${this.favouriteFood}`);
 }
 
+Hero.prototype.isFavouriteFood = function(food){
+  return food.name === this.favouriteFood;
+}
+
 Hero.prototype.addTasks = function (task){
   this.tasks.push(task);
 }
