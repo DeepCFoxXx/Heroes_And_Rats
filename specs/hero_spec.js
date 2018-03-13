@@ -18,9 +18,9 @@ describe('hero', function(){
     hero1 = new Hero('Link', 28, 'Gourmet Meat Curry');
     hero2 = new Hero('Zelda', 50, 'Vegetable Curry');
     hero3 = new Hero('Linkle', 28, 'Seafood Rice Balls');
-    task1 = new Task(5, 1, 'Green Ruppe');
-    task2 = new Task(10, 2, 'Purple Rupee');
-    task3 = new Task(15, 3, 'Heart Container');
+    task1 = new Task("Easy", "Low", "Green Ruppe");
+    task2 = new Task("Medium", "Urgent", "Purple Rupee");
+    task3 = new Task("Hard", "Very Urgent", "Heart Container");
     food1 = new Food('Apple', 1);
     food2 = new Food('Gourmet Meat Curry', 10)
     rat = new Rat();
@@ -52,20 +52,26 @@ describe('hero', function(){
     assert.strictEqual(hero1.getHealth(), 43);
   })
 
+  it('can eat food if posioned', function(){
+    rat.touchFood(food1);
+    hero1.eatFood(food1);
+    assert.strictEqual(hero1.getHealth(), 29);
+  })
+
   it('hero can talk', function(){
     assert.strictEqual(hero1.talk(), 'My name is Link and my food of chioce is Gourmet Meat Curry');
   })
 
   it('does task have difficulty level', function(){
-    assert.strictEqual(task1.difficultyLevel, 5);
+    assert.strictEqual(task1.difficultyLevel, "Easy");
   })
 
   it('does task have a urgency level', function(){
-    assert.strictEqual(task1.urgencyLevel, 1);
+    assert.strictEqual(task1.urgencyLevel, "Low");
   })
 
   it('does task have task reward', function(){
-    assert.strictEqual(task1.reward, 'Green Ruppe');
+    assert.strictEqual(task1.reward, "Green Ruppe");
   })
 
   it('tasks starts off empty', function(){
@@ -89,6 +95,10 @@ describe('hero', function(){
     food1 = new Food('Apple', 1);
     hero1.eatFood(food1);
     assert.strictEqual(hero1.health, 29);
+  })
+
+  xit('can sort taks by difficulty', function(){
+    assert.deepEqual(hero1.sortTasks("Difficulty"), [task1, task2, task3]);
   })
 
 })

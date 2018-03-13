@@ -45,4 +45,10 @@ Hero.prototype.sort = function (){
   this.tasks.sort(task);
 }
 
+Hero.prototype.sortTasks = function(field){
+  return this.tasks.sort(function(a,b){
+    return a.compareTo(b, field);
+  })
+}
+
 module.exports = Hero;
