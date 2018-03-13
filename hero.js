@@ -47,7 +47,7 @@ Hero.prototype.sort = function (){
 
 Hero.prototype.sortTasks = function(field){
   return this.tasks.sort(function(a,b){
-    return a.compareTo(b, field);
+    return a.compareDifficultyLevel(b, field);
   })
 }
 

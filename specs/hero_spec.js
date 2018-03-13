@@ -5,14 +5,15 @@ const Rat = require('../rat.js')
 const assert = require('assert')
 
 describe('hero', function(){
-  let hero1;
-  let hero2;
-  let hero3;
-  let task1;
-  let task2;
-  let task3;
-  let food1;
-  let food2;
+  var hero1;
+  var hero2;
+  var hero3;
+  var task1;
+  var task2;
+  var task3;
+  var food1;
+  var food2;
+  var rat;
 
   beforeEach(function() {
     hero1 = new Hero('Link', 28, 'Gourmet Meat Curry');
@@ -24,6 +25,9 @@ describe('hero', function(){
     food1 = new Food('Apple', 1);
     food2 = new Food('Gourmet Meat Curry', 10)
     rat = new Rat();
+    hero1.addTasks(task1);
+    hero1.addTasks(task2);
+    hero1.addTasks(task3);
   })
 
   it('can get hero name', function(){
@@ -74,13 +78,13 @@ describe('hero', function(){
     assert.strictEqual(task1.reward, "Green Ruppe");
   })
 
-  it('tasks starts off empty', function(){
+  xit('tasks starts off empty', function(){
     assert.strictEqual(hero1.tasks.length, 0)
   })
 
   it('can add to tasks', function(){
     hero1.addTasks(task1);
-    assert.strictEqual(hero1.tasks.length, 1)
+    assert.strictEqual(hero1.tasks.length, 4)
   })
 
   it('food has a name', function(){
@@ -97,7 +101,7 @@ describe('hero', function(){
     assert.strictEqual(hero1.health, 29);
   })
 
-  xit('can sort taks by difficulty', function(){
+  it('can sort taks by difficulty', function(){
     assert.deepEqual(hero1.sortTasks("Difficulty"), [task1, task2, task3]);
   })
 
