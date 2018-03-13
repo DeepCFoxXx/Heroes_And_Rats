@@ -51,4 +51,16 @@ Hero.prototype.sortTasks = function(field){
   })
 }
 
+Hero.prototype.uncompletedTasks = function(){
+  return this.tasks.filter(function(element){
+    return !element.completed();
+  })
+}
+
+Hero.prototype.completedTasks = function(){
+  return this.tasks.filter(function(element){
+    return element.completed();
+  })
+}
+
 module.exports = Hero;
